@@ -1,0 +1,23 @@
+CREATE TABLE CLIENTE(
+ Code int primary key,
+ Nome varchar(50) not null,
+ CPF varchar(11),
+ Num_RG varchar (15),
+ registro date
+);
+INSERT INTO Cliente(code, nome, cpf)
+VALUES(1,'Adriano Silva','52632143'),
+      (2, 'Larissa Sousa', '1034566278')
+
+ALTER TABLE Cliente add column status boolean
+
+ALTER TABLE Cliente DROP registro;
+
+ALTER TABLE Cliente RENAME Num_RG to RG;
+
+UPDATE Cliente set nome = 'Larissa Rangel',
+       RG = '465554' where code = 2;
+
+DELETE FROM Cliente where Nome = 'Adriano Silva';
+
+ALTER TABLE Cliente ADD Tipo_Sanguinio char(3) default('x');
